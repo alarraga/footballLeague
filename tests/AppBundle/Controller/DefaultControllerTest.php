@@ -22,7 +22,7 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/getLeague');
+        $crawler = $client->request('GET', '/league');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
@@ -32,7 +32,7 @@ class DefaultControllerTest extends WebTestCase
     {
         $client = static::createClient();
 
-        $crawler = $client->request('GET', '/getTeam');
+        $crawler = $client->request('GET', '/team');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
@@ -46,7 +46,7 @@ class DefaultControllerTest extends WebTestCase
 		$data = array(
 			'name' => $nickname
 		);
-        $crawler = $client->request('GET', '/insertLeague', $data);
+        $crawler = $client->request('POST', '/league/insert', $data);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
@@ -61,7 +61,7 @@ class DefaultControllerTest extends WebTestCase
 		$data = array(
 			'name' => $nickname
 		);
-        $crawler = $client->request('GET', '/updateLeague/{$i}', $data);
+        $crawler = $client->request('POST', '/league/update/{$i}', $data);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
@@ -74,7 +74,7 @@ class DefaultControllerTest extends WebTestCase
 		$nickname = 'ObjectOrienter'.rand(0, 999);
 		$id = rand(0,999);
 		
-        $crawler = $client->request('GET', '/deleteLeague/{$i}');
+        $crawler = $client->request('GET', '/league/delete/{$i}');
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
@@ -91,11 +91,12 @@ class DefaultControllerTest extends WebTestCase
 			'strip'=> $nickname,
 			'football_leagueid'=>$id
 		);
-        $crawler = $client->request('GET', '/insertTeam', $data);
+        $crawler = $client->request('POST', '/team/insert', $data);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
-//update team
+    
+    //update team
 	public function updateteamIndex()
     {
         $client = static::createClient();
@@ -107,18 +108,19 @@ class DefaultControllerTest extends WebTestCase
 			'strip'=> $nickname,
 			'football_leagueid'=>$id
 		);
-        $crawler = $client->request('GET', '/updateTeam/{$i}', $data);
+        $crawler = $client->request('POST', '/team/update/{$i}', $data);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }
-	//delete team
+	
+    //delete team
 	public function deleteteamIndex()
     {
         $client = static::createClient();
 
 
 		$id = rand(0,999);
-        $crawler = $client->request('GET', '/deleteTeam/{$i}', $data);
+        $crawler = $client->request('GET', '/team/delete/{$i}', $data);
 
         $this->assertEquals(200, $client->getResponse()->getStatusCode());
     }

@@ -1,55 +1,77 @@
-# Symfony Authorization for RS256-Signed Tokens
+Symfony Standard Edition
+========================
 
-This sample demonstrates how to protect endpoints in a Symfony API by verifying an incoming JWT access token signed by Auth0. The token must be signed with the RS256 algorithm and must be verified against your Auth0 JSON Web Key Set.
+**WARNING**: This distribution does not support Symfony 4. See the
+[Installing & Setting up the Symfony Framework][15] page to find a replacement
+that fits you best.
 
-## Getting Started
+Welcome to the Symfony Standard Edition - a fully-functional Symfony
+application that you can use as the skeleton for your new applications.
 
-## Install the Dependencies
+For details on how to download and get started with Symfony, see the
+[Installation][1] chapter of the Symfony Documentation.
 
-Run `composer install`.
+What's inside?
+--------------
 
-## Configure the App with your Auth0 Domain and Audience
+The Symfony Standard Edition is configured with the following defaults:
 
-Rename `.env.example` file to `.env`. Replace `{AUTH0_DOMAIN}` with your Auth0 domain and `{AUTH0_AUDIENCE}` with the **Identifier** you have set for your API in the Auth0 dashboard.
+  * An AppBundle you can use to start coding;
 
-## Start the Application
+  * Twig as the only configured template engine;
 
-Run `php bin/console server:run 127.0.0.1:3010` to start the server.
+  * Doctrine ORM/DBAL;
 
-The API will be served at [localhost:3010](http://localhost:3010).
+  * Swiftmailer;
 
-## Running the Sample With Docker
+  * Annotations enabled for everything.
 
-In order to run the example with docker you need to have `docker` installed.
+It comes pre-configured with the following bundles:
 
-You also need to set the client credentials as explained [previously](#Configure-the-app-with-your-auth0-domain-and-audience).
+  * **FrameworkBundle** - The core Symfony framework bundle
 
-Execute in command line `sh exec.sh` to run the Docker in Linux, or `.\exec.ps1` to run the Docker in Windows.
+  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
+    template and routing annotation capability
 
-## What is Auth0?
+  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
 
-Auth0 helps you to:
+  * [**TwigBundle**][8] - Adds support for the Twig templating engine
 
-* Add authentication with [multiple authentication sources](https://docs.auth0.com/identityproviders), either social like **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce, amont others**, or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS or any SAML Identity Provider**.
-* Add authentication through more traditional **[username/password databases](https://docs.auth0.com/mysql-connection-tutorial)**.
-* Add support for **[linking different user accounts](https://docs.auth0.com/link-accounts)** with the same user.
-* Support for generating signed [Json Web Tokens](https://docs.auth0.com/jwt) to call your APIs and **flow the user identity** securely.
-* Analytics of how, when and where users are logging in.
-* Pull data from other sources and add it to the user profile, through [JavaScript rules](https://docs.auth0.com/rules).
+  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
+    component
 
-## Create a free Auth0 account
+  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
+    sending emails
 
-1. Go to [Auth0](https://auth0.com/signup) and click Sign Up.
-2. Use Google, GitHub or Microsoft Account to login.
+  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
 
-## Issue Reporting
+  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
+    the web debug toolbar
 
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
+  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
+    configuring and working with Symfony distributions
 
-## Author
+  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
+    capabilities
 
-[Auth0](https://auth0.com)
+  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
+    using the PHP built-in web server
 
-## License
+  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
+    integration
 
-This project is licensed under the MIT license. See the `LICENSE` file for more info.
+All libraries and bundles included in the Symfony Standard Edition are
+released under the MIT or BSD license.
+
+Enjoy!
+
+[1]:  https://symfony.com/doc/3.4/setup.html
+[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
+[7]:  https://symfony.com/doc/3.4/doctrine.html
+[8]:  https://symfony.com/doc/3.4/templating.html
+[9]:  https://symfony.com/doc/3.4/security.html
+[10]: https://symfony.com/doc/3.4/email.html
+[11]: https://symfony.com/doc/3.4/logging.html
+[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
+[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
+[15]: https://symfony.com/doc/current/setup.html
