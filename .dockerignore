@@ -1,0 +1,7 @@
+vendor/
+.gitignore
+.env.example
+.env
+exec.sh
+exec.ps1
+*.md
